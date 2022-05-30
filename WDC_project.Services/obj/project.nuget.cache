@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "1c7lpPkGd05fT88rFsD0WPj+yBG2EBy8HzX+CohE1E+3+hTLgJ9F+ZoA9fvJlg7DyZvEbStJCjCf1k13PYouyg==",
+  "success": true,
+  "projectFilePath": "D:\\RiderProjects\\WDC\\WDC\\WDC_project.Services\\WDC_project.Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gulev\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\gulev\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.3\\microsoft.extensions.dependencyinjection.abstractions.3.1.3.nupkg.sha512",
+    "C:\\Users\\gulev\\.nuget\\packages\\microsoft.extensions.options\\3.1.3\\microsoft.extensions.options.3.1.3.nupkg.sha512",
+    "C:\\Users\\gulev\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.3\\microsoft.extensions.primitives.3.1.3.nupkg.sha512",
+    "C:\\Users\\gulev\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.5.1\\microsoft.identitymodel.jsonwebtokens.6.5.1.nupkg.sha512",
+    "C:\\Users\\gulev\\.nuget\\packages\\microsoft.identitymodel.logging\\6.5.1\\microsoft.identitymodel.logging.6.5.1.nupkg.sha512",
+    "C:\\Users\\gulev\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.5.1\\microsoft.identitymodel.tokens.6.5.1.nupkg.sha512",
+    "C:\\Users\\gulev\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.5.1\\system.identitymodel.tokens.jwt.6.5.1.nupkg.sha512",
+    "C:\\Users\\gulev\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

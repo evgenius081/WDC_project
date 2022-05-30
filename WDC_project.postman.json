@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "dc6d8213-408f-4ffa-b20e-df6405339ddf",
+		"name": "WDC_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users"
+							]
+						},
+						"description": "[No authentication or authorization]\r\nGet full information about all users in database."
+					},
+					"response": []
+				},
+				{
+					"name": "[Auth] Manager/GetAll",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"description": "Admin",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"description": "Manager",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"description": "Manager",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"description": "User",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/manager/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"manager",
+								"users"
+							]
+						},
+						"description": "[Authentication and Authorization]\r\nGet info about Name, Username, Roles and Policies of all users with same or lower AccessLevel.\r\nOnly Staff role allowed."
+					},
+					"response": []
+				},
+				{
+					"name": "[Auth] Admin/GetAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"description": "Admin",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"description": "Manager",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"description": "Manager",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"description": "User",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/admin/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"admin",
+								"users"
+							]
+						},
+						"description": "[Authentication and Authorization]\r\nGet full information about all users in database.\r\nOnly Admin role allowed."
+					},
+					"response": []
+				},
+				{
+					"name": "[Auth] UserProfile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"description": "Admin",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"description": "Manager",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"description": "Manager",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"description": "User",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/users/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"profile"
+							]
+						},
+						"description": "[Authentication and Authorization]\r\nGet all user's information."
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Username\": \"admin\",\n\t\"Password\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/users/authenticate",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"authenticate"
+							]
+						},
+						"description": "Authentication using username and password. All user's details are returned."
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Name\": \"Francis Doe\",\n\t\"Username\": \"user2\",\n\t\"Password\": \"user2\",\n\t\"Age\": 10\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users"
+							]
+						},
+						"description": "[No authentication or authorization]\r\nAdd new user.\r\nRole: User"
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/users/5",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"5"
+							]
+						},
+						"description": "[No authentication or authorization]\r\nGet full user's information."
+					},
+					"response": []
+				}
+			],
+	"protocolProfileBehavior": {}
+}
