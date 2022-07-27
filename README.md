@@ -43,7 +43,7 @@ I also created some policies, such as:
   dotnet run
   ```
 * Using MS Visual Studio or Jetbrains Rider Projects
-  1. Open one of these IDEs.
+  1. Open WDC_project.sln file with one of these IDEs.
   2. Run solution using WDC_project.Web configuration (not IIS Express!!!)
   
 ## Testing
