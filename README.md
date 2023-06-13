@@ -69,4 +69,4 @@ Good luck using it!
 contact me.
 
 ## Roadmap
-- [ ] Correct RBAC and ABAC authentications
+- [x] ~~Correct RBAC and ABAC authentications~~
