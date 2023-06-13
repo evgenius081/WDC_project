@@ -67,3 +67,6 @@ Good luck using it!
 ## Notes
 1. If you want more info about my application or theory and speak polish, you can read file WDC_sprawozdanie.pdf at the root of repo. If it's not enough, please 
 contact me.
+
+## Roadmap
+- [ ] Correct RBAC and ABAC authentications
