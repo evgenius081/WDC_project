@@ -45,11 +45,10 @@ namespace WDC_project.Web.Controllers
         [HttpGet("users")]
         public async Task<IActionResult> GetAllUsersAsync()
         {
-            var loggedInUserId = HttpContextHelper.GetIdByContextUser(HttpContext.User);
-            var loggedInUser = await _userService.GetByIdAsync(loggedInUserId);
+            var loggedInUserName = HttpContextHelper.GetNameByContextUser(HttpContext.User);
             var pol = await _policyService.GetAllAsync();
             var claim = pol.Where(p => p.Policy == PoliciesEntity.AdminUsernameClaimType);
-            if (loggedInUser.Name != claim.First().Value)
+            if (loggedInUserName != claim.First().Value)
             {
                 return Forbid();
             }

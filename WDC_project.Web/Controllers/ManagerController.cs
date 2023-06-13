@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WDC_project.Core.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace WDC_project.Web.Controllers
 {
@@ -48,34 +49,15 @@ namespace WDC_project.Web.Controllers
         [HttpGet("users")]
         public async Task<IActionResult> GetAllUsersAsync()
         {
-            var users = await _userService.GetAllAsync();
-            
             var pol = await _policyService.GetAllAsync();
-            var claim = pol.Where(p => p.Policy == PoliciesEntity.ManagerAgeClaimType);
-            
-            var sign = claim.First().Value[0];
-            switch (sign)
+            var minimumAge = int.Parse(pol.Where(p => p.Policy == PoliciesEntity.MinimumManagerAgeClaimType).First().Value);
+            var userAge = HttpContextHelper.GetAgeByContextUser(HttpContext.User);
+            if (userAge < minimumAge)
             {
-                case ('>'):
-                {
-                    users = users.Where(u => u.Age >= int.Parse(claim.First().Value.Substring(1)));
-                    break;
-                }
-                case ('<'):
-                {
-                    users = users.Where(u => u.Age <= int.Parse(claim.First().Value.Substring(1)));
-                    break;
-                }
-                default:
-                {
-                    users = users.Where(u => u.Age == int.Parse(claim.First().Value.Substring(1)));
-                    break;
-                }
+                return Forbid();
             }
-            // var loggedInUserMaxAccessLevelMax = int.Parse(loggedInUser.Policies.Where(p => p.Policy.Contains("AccessLevel")).Max(p => p.Value));
-            // users = users.Where(u => int.Parse(u.Policies.Where(p => p.Policy
-            //         .Contains("AccessLevel"))
-            //     .Max(p => p.Value)) <= loggedInUserMaxAccessLevelMax);
+            var users = await _userService.GetAllAsync();
+
             var userDetailsDtos = _mapper.Map<List<UserPreviewDto>>(users);
             return Ok(userDetailsDtos);
         }

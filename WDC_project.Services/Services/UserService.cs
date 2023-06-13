@@ -69,7 +69,8 @@ namespace WDC_project.Services.Services
             var key = Encoding.ASCII.GetBytes(_JWTAuthSettings.Secret);
             var claims = user.Roles.Select(r => new Claim(ClaimTypes.Role, r.Role)).ToList();
             claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
-            claims.Add(new Claim(ClaimTypes.Name, user.Username));
+            claims.Add(new Claim(ClaimTypes.Name, user.Name));
+            claims.Add(new Claim(type: "Age", user.Age.ToString()));
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
